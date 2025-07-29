@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>SSAS ALIMENTACORP</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Vendedores'[Vendedor ID], 'Dim Vendedores'[Nombre], "Total", [Total])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Vendedores</DimensionName>
+                    <HierarchyName>Vendedor ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim Vendedores].[Vendedor ID]</HierarchyUniqueName>
+                    <LevelName>Vendedor ID</LevelName>
+                    <UniqueName>[Dim Vendedores].[Vendedor ID].[Vendedor ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Vendedor ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Vendedores</DimensionName>
+                    <HierarchyName>Nombre</HierarchyName>
+                    <HierarchyUniqueName>[Dim Vendedores].[Nombre]</HierarchyUniqueName>
+                    <LevelName>Nombre</LevelName>
+                    <UniqueName>[Dim Vendedores].[Nombre].[Nombre]</UniqueName>
+                  </ID>
+                  <ItemCaption>Nombre</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Total</MeasureName>
+                    <UniqueName>[Measures].[Total]</UniqueName>
+                  </ID>
+                  <ItemCaption>Total</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>ALIMENTACORP cubo</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Vendedores'[Vendedor ID], 'Dim Vendedores'[Nombre], "Total", [Total])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Vendedor_ID">
+        <DataField>Dim Vendedores[Vendedor ID]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Nombre">
+        <DataField>Dim Vendedores[Nombre]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Total">
+        <DataField>[Total]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

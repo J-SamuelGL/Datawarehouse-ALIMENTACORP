@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>SSAS ALIMENTACORP</DataSourceReference>
+      <CommandText>EVALUATE SUMMARIZECOLUMNS('Dim Sucursales'[Sucursal ID], 'Dim Sucursales'[Region], 'Dim Sucursales'[Departamento], 'Dim Sucursales'[Nombre], "Total", [Total])</CommandText>
+      <rd:DesignerState>
+        <QueryDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+          <CommandType>DAX</CommandType>
+          <QuerySpecification xsi:type="MDXQuerySpecification">
+            <Select>
+              <Items>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Sucursales</DimensionName>
+                    <HierarchyName>Sucursal ID</HierarchyName>
+                    <HierarchyUniqueName>[Dim Sucursales].[Sucursal ID]</HierarchyUniqueName>
+                    <LevelName>Sucursal ID</LevelName>
+                    <UniqueName>[Dim Sucursales].[Sucursal ID].[Sucursal ID]</UniqueName>
+                  </ID>
+                  <ItemCaption>Sucursal ID</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Sucursales</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Dim Sucursales].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Region</LevelName>
+                    <UniqueName>[Dim Sucursales].[Hierarchy].[Region]</UniqueName>
+                  </ID>
+                  <ItemCaption>Region</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Sucursales</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Dim Sucursales].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Departamento</LevelName>
+                    <UniqueName>[Dim Sucursales].[Hierarchy].[Departamento]</UniqueName>
+                  </ID>
+                  <ItemCaption>Departamento</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Level">
+                    <DimensionName>Dim Sucursales</DimensionName>
+                    <HierarchyName>Hierarchy</HierarchyName>
+                    <HierarchyUniqueName>[Dim Sucursales].[Hierarchy]</HierarchyUniqueName>
+                    <LevelName>Nombre</LevelName>
+                    <UniqueName>[Dim Sucursales].[Hierarchy].[Nombre]</UniqueName>
+                  </ID>
+                  <ItemCaption>Nombre</ItemCaption>
+                  <UniqueName>true</UniqueName>
+                </Item>
+                <Item>
+                  <ID xsi:type="Measure">
+                    <MeasureName>Total</MeasureName>
+                    <UniqueName>[Measures].[Total]</UniqueName>
+                  </ID>
+                  <ItemCaption>Total</ItemCaption>
+                  <BackColor>true</BackColor>
+                  <ForeColor>true</ForeColor>
+                  <FontFamily>true</FontFamily>
+                  <FontSize>true</FontSize>
+                  <FontWeight>true</FontWeight>
+                  <FontStyle>true</FontStyle>
+                  <FontDecoration>true</FontDecoration>
+                  <FormattedValue>true</FormattedValue>
+                  <FormatString>true</FormatString>
+                </Item>
+              </Items>
+            </Select>
+            <AutoExecute>false</AutoExecute>
+            <From>ALIMENTACORP cubo</From>
+            <Filter>
+              <FilterItems />
+            </Filter>
+            <Calculations />
+            <Aggregates />
+            <QueryProperties>
+              <IncludeMemberValue>true</IncludeMemberValue>
+            </QueryProperties>
+          </QuerySpecification>
+          <Query>
+            <Statement>EVALUATE SUMMARIZECOLUMNS('Dim Sucursales'[Sucursal ID], 'Dim Sucursales'[Region], 'Dim Sucursales'[Departamento], 'Dim Sucursales'[Nombre], "Total", [Total])</Statement>
+            <ParameterDefinitions />
+          </Query>
+        </QueryDefinition>
+      </rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="Sucursal_ID">
+        <DataField>Dim Sucursales[Sucursal ID]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Region">
+        <DataField>Dim Sucursales[Region]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Departamento">
+        <DataField>Dim Sucursales[Departamento]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Nombre">
+        <DataField>Dim Sucursales[Nombre]</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Total">
+        <DataField>[Total]</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
